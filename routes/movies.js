@@ -10,6 +10,17 @@ router.get('/', async (req, res, next) => {
     } catch (error) {
 
     }
-})   
+})  
+
+/* GET detail page */
+router.get('/:movieId', async (req, res, next) => {
+    const { movieId } = req.params;
+    try {
+      const movie = await Movies.findById(movieId);
+      res.render('detail', movie)
+    } catch (error) {
+      next(error)
+    }
+  })
 
 module.exports = router;
