@@ -1,10 +1,24 @@
+<div class="details-canva">
+  <div>
+    <img src="{{image}}" alt="{{title}}" />
+  </div>
+  <div class="info-details">
   <a href="/movies">Go back</a>
- 
   <h1>{{ title }}</h1>
-  <p>Director: {{ director }}</p>
-  <p>Stars: {{ stars }}</p>
+  <p id="director">Director: {{ director }}</p>
+  <p id="stars">Stars:</p>
+  <ul>
+    {{#each stars}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
   <p>{{ description }}</p>
-  
-  <p> {{showtimes}}</p>
+
+
+{{#each showtimes}}
+  {{this}} |
+  {{/each}}
+  </div>
+  </div>
     
-  <img src="{{image}}" alt="{{title}}" />
+  
